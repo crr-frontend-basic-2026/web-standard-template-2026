@@ -505,3 +505,6 @@ body.scroll .top {
     transform: translateY(0);
 }
 
+.mob-nav-btn {
+    display: none;
+}
