@@ -21,6 +21,7 @@ cards.forEach((card, index) => {
 const body = document.querySelector('body')
 const topBtn = document.querySelector('.top')
 const mNavBtn = document.querySelector('.mob-nav-btn')
+const navBtns = document.querySelectorAll('nav ul a')
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         body.classList.add('scroll')
@@ -38,7 +39,21 @@ topBtn.addEventListener('click', () => {
     })
 })
 
-mNavBtn.addEventListener('click',(e)=>{
+mNavBtn.addEventListener('click', (e) => {
     e.preventDefault()
     body.classList.toggle('m-nav-open')
+})
+navBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        const id = btn.getAttribute('href')
+        const target = document.querySelector(id)
+        const headerH= document.querySelector('header').offsetHeight
+        window.scrollTo({
+            top: target.offsetTop -headerH,
+            behavior: 'smooth'
+        })
+        // body.classList.remove('m-nav-open') 
+    })
 })
