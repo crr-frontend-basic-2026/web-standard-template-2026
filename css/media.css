@@ -18,22 +18,105 @@
         padding: 0 2rem;
     }
 
-    header {
-        padding: 1.6rem 0;
+    .mob-nav-btn {
+        display: block;
+        width: 3.9rem;
+        height: 1.6rem;
+        position: relative;
+
     }
 
-    header .inner {
-        flex-direction: column;
-        gap: 0.8rem;
+    .mob-nav-btn span {
+        display: block;
+        width: 100%;
+        height: .2rem;
+        background-color: #fff;
+        font-size: 0;
+        position: absolute;
+        top: 0;
+        transition: all;
+        transition: all .3s;
     }
+
+    .mob-nav-btn span:nth-child(2) {
+        top: 48%
+    }
+
+    .mob-nav-btn span:nth-child(3) {
+        top: 99%
+    }
+
+
+    nav {
+        position: absolute;
+        width: 100%;
+        top: 4.5rem;
+        padding: 2rem 0;
+        backdrop-filter: blur(5px);
+        background: #000000;
+        background: linear-gradient(180deg, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, 0.151) 100%);
+        left: 0;
+        transform: translateX(110%);
+        transition: all .3s;
+    }
+
+    body.m-nav-open nav {
+        transform: translateX(0%);
+
+    }
+
+    body.m-nav-open header {
+        background-color: #000000;
+    }
+
+    body.m-nav-open .mob-nav-btn span:nth-child(1) {
+        top: 48%;
+        transform: rotate(35deg);
+
+    }
+
+    body.m-nav-open .mob-nav-btn span:nth-child(2) {
+        transform: translateX(100%);
+        opacity: 0;
+
+    }
+
+    body.m-nav-open .mob-nav-btn span:nth-child(3) {
+        top: 48%;
+        transform: rotate(-35deg);
+
+    }
+
+    header {
+        padding: 1rem 0;
+    }
+
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        font-size: 1.4rem;
+        align-items: center;
+
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul a {
+        display: block;
+        padding: 1.4rem 0;
+    }
+
+    nav ul li+li {
+        border-top: 1px solid #ffffff27;
+    }
+
 
     .logo {
         font-size: 2.4rem;
-    }
-
-    nav ul {
-        gap: 1.6rem;
-        font-size: 1.4rem;
     }
 
     .hero {
@@ -71,7 +154,28 @@
     .thumb {
         width: 100%;
     }
+    .guide-tabs {
+        overflow-x: auto;
+        /* 탭은 옆으로 밀기 */
+    }
 
+    .guide-tabs button {
+        white-space: nowrap;
+    }
+
+    .guide-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .guide-content li {
+        flex: none;
+        min-height: 9rem;
+    }
+
+    .guide-content li.on {
+        min-height: 24rem;
+    }
     .photos {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 12rem);

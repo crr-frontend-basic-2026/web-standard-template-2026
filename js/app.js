@@ -20,7 +20,7 @@ cards.forEach((card, index) => {
 
 const body = document.querySelector('body')
 const topBtn = document.querySelector('.top')
-
+const mNavBtn = document.querySelector('.mob-nav-btn')
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         body.classList.add('scroll')
@@ -36,4 +36,9 @@ topBtn.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     })
+})
+
+mNavBtn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    body.classList.toggle('m-nav-open')
 })

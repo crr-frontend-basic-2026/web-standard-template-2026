@@ -56,7 +56,14 @@ header {
     z-index: 10;
     padding: 2.4rem 0;
     color: #ffffff;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 27, 75, 0.4) 60%, rgba(30, 27, 75, 0) 100%);
+
+}
+
+.scroll header {
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, 0.05) 100%);
+    backdrop-filter: blur(4px);
+
 }
 
 header .inner {
@@ -393,28 +400,7 @@ nav a:hover {
 
 /* 모바일에서는 세로로 쌓기 (768px 미디어쿼리 안에 넣어도 돼요) */
 @media (max-width: 768px) {
-    .guide-tabs {
-        overflow-x: auto;
-        /* 탭은 옆으로 밀기 */
-    }
 
-    .guide-tabs button {
-        white-space: nowrap;
-    }
-
-    .guide-content {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .guide-content li {
-        flex: none;
-        min-height: 9rem;
-    }
-
-    .guide-content li.on {
-        min-height: 24rem;
-    }
 }
 
 /* ===== 5. 사진첩 ===== */
